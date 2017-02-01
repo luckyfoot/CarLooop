@@ -1,6 +1,6 @@
 import java.util.*;
 /**
-*
+*@author Levi Overcast, Antonio Solorio
 * 
 *
 *
@@ -16,9 +16,15 @@ public class Car {
       this.dist = dist;
    }
 
-   public int getPos() {return this.pos;}
-   public int getGas() {return this.gas;}
-   public int getDist() {return this.dist;}
+   public int getPos() {
+      return this.pos;
+   }
+   public int getGas() {
+      return this.gas;
+   }
+   public int getDist() {
+      return this.dist;
+   }
 
    public String toString(){
       String toStr = "";
