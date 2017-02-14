@@ -1,11 +1,23 @@
-import java.util.*;
 /**
 *@author Levi Overcast, Antonio Solorio
 * 
+*Car class will define the method to create a car object
+*Each car object will have a value for:
+*	- Distance to next car
+*	- Amount of gas
+*	- Position in the loop
 *
+*A getter for position, gas and distance
+*
+*toString will return a the information on the car
 *
 */
 public class Car {
+	/**
+	 * Private variables to be contained within the car object passes by the CarRoundTheBlock method
+	 * @param pos - Cars position in the loop
+	 * @param 
+	 */
    private int pos;
    private int gas;
    private int dist;
@@ -14,16 +26,30 @@ public class Car {
       this.pos = pos;
       this.gas = gas;
       this.dist = dist;
+      return;
    }
+   
 
    public int getPos() {
       return this.pos;
    }
+   public void setPos(int pos){
+	   this.pos = pos;
+	   return;
+   }
    public int getGas() {
       return this.gas;
    }
+   public void setGas(int gas){
+	   this.gas = gas;
+	   return;
+   }
    public int getDist() {
       return this.dist;
+   }
+   public void setDist(int dist){
+	   this.dist = dist;
+	   return;
    }
 
    public String toString(){
