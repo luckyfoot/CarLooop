@@ -15,8 +15,11 @@
 public class Car {
 	/**
 	 * Private variables to be contained within the car object passes by the CarRoundTheBlock method
-	 * @param pos - Cars position in the loop
-	 * @param 
+	 * @param pos = Cars position in the loop
+	 * @param gas = random amount of gas
+	 * @param dist = random distance from next car
+	 * 
+	 * 
 	 */
    private int pos;
    private int gas;
@@ -29,7 +32,7 @@ public class Car {
       return;
    }
    
-
+// Getters and setters for car object
    public int getPos() {
       return this.pos;
    }

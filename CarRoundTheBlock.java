@@ -22,7 +22,7 @@ public class CarRoundTheBlock {
 		int winner = 0;
 		int[] data = {};
 		Scanner scnr = new Scanner(System.in);
-		System.out.print("Enter data: ");
+		
 		do {
 			
 			in_str = scnr.next();
@@ -49,18 +49,27 @@ public class CarRoundTheBlock {
 			
 		//}
 		
-		
-		PrintArr( cars);
-		for (int j = 0; j < cars.length; j++) {
-			System.out.printf("Car #%d has gas enough for %d miles, distance to neighbor %d miles\n",cars[j].getPos() , cars[j].getGas(),cars[j].getDist());
-		}
-		for (int j = 0 ; j < cars.length-1; j++){
-			if (cars[j].getGas() >= cars[j+1].getDist()){
-				winner = j;
+		if (cars.length >0){
+			PrintArr( cars);
+			for (int j = 0; j < cars.length; j++) {
+				System.out.printf("Car #%d has gas enough for %d miles, distance to neighbor %d miles\n",cars[j].getPos() , cars[j].getGas(),cars[j].getDist());
 			}
+			for (int j = 0 ; j < cars.length; j++){
+				if (cars[j].getGas() < cars[j].getDist() && cars.length > 0){
+					System.out.println("Not enough gas for full circle");
+				}
+				else if (cars[j].getGas() >= cars[j].getDist()){
+					System.out.printf("The winner car is car # %d\n",winner);
+					winner = j;
+					DrivingLog(winner, cars);
+				}
+			}
+			
+			
 		}
-		System.out.printf("The winner car is car # %d\n",winner);
-		DrivingLog(winner, cars);
+		else {
+			System.out.println("No cars, no winner to be found ");
+		}
 		/*System.out.println(findWinner(cars));
 		for(int i = 0; i < cars.length; i++) {
 			System.out.println(findWinner(cars));
