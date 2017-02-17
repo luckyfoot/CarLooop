@@ -55,17 +55,15 @@ public class CarRoundTheBlock {
 				System.out.printf("Car #%d has gas enough for %d miles, distance to neighbor %d miles\n",cars[j].getPos() , cars[j].getGas(),cars[j].getDist());
 			}
 			for (int j = 0 ; j < cars.length; j++){
-				if (cars[j].getGas() < cars[j].getDist() && cars.length > 0){
+				if (cars[j].getGas() < cars[j].getDist() && cars.length < 2){
 					System.out.println("Not enough gas for full circle");
 				}
 				else if (cars[j].getGas() >= cars[j].getDist()){
-					System.out.printf("The winner car is car # %d\n",winner);
-					winner = j;
+					winner = j ;
+					System.out.printf("The winner is car # %d\n",winner);
 					DrivingLog(winner, cars);
 				}
 			}
-			
-			
 		}
 		else {
 			System.out.println("No cars, no winner to be found ");
@@ -201,13 +199,14 @@ public class CarRoundTheBlock {
 		while (race){
 			for (i=start +1; i < raceList.length; i++){
 				champ.setGas( champ.getGas() - champ.getDist() );
-				System.out.printf("At position %d gas %d, distance %d\n", raceList[i].getPos(), raceList[i].getGas(),raceList[i].getDist());
+				System.out.printf("Go to position %d gas %d, distance %d\n", raceList[i].getPos(), raceList[i].getGas(),raceList[i].getDist());
 				System.out.printf("Getting %d miles worth of gas now have %d miles worth, starting next leg \n", raceList[i].getGas(), champ.getGas()+raceList[i].getGas());
 				champ.setDist(raceList[i].getDist());
 				totalDist += raceList[i].getDist();
 				champ.setGas(champ.getGas()+ raceList[i].getGas());
 				
 			}
+			/*
 			for ( i=0 ; i < start; i++ ){
 				champ.setGas( champ.getGas() - champ.getDist() );
 				System.out.printf("At position %d gas %d, distance %d\n", raceList[i].getPos(), raceList[i].getGas(),raceList[i].getDist());
@@ -217,6 +216,7 @@ public class CarRoundTheBlock {
 				champ.setGas(champ.getGas()+ raceList[i].getGas());
 				
 			}
+			*/
 			System.out.printf("Finished driving, drove %d miles, gas left %d miles worth\n", totalDist, champ.getGas());
 			race = false;
 		}
