@@ -57,17 +57,18 @@ public class CarRoundTheBlock {
 			for (int j = 0 ; j < cars.length; j++){
 				if (cars[j].getGas() < cars[j].getDist() && cars.length < 2){
 					System.out.println("Not enough gas for full circle");
+					break;
 				}
 				else if (cars[j].getGas() >= cars[j].getDist()){
 					winner = j ;
 					System.out.printf("The winner is car # %d\n",winner);
 					
 				}
-			}
-			if (cars.length >1){
 				DrivingLog(winner, cars);
 			}
-		}
+			
+			}
+		
 		else {
 			System.out.println("No cars, no winner to be found ");
 		}
@@ -196,7 +197,7 @@ public class CarRoundTheBlock {
 		Car[] raceList = cars.clone();
 		
 		while (race){
-			if (raceList.length < 2 && raceList[0].getGas() >= raceList[0].getDist() ){
+			if (raceList.length <= 1 && raceList[0].getGas() >= raceList[0].getDist() ){
 				champ.setGas(raceList[0].getGas() - raceList[0].getDist());
 				System.out.printf("This car can move the whole distance with gas left for %d more miles.\n",champ.getGas() );
 				race = false;
@@ -224,10 +225,10 @@ public class CarRoundTheBlock {
 						champ.setGas(champ.getGas()+ raceList[i].getGas());
 						}
 					
-					
+					System.out.printf("Finished driving, drove %d miles, gas left %d miles worth\n", totalDist, champ.getGas());
 					race = false;
 				}
-			System.out.printf("Finished driving, drove %d miles, gas left %d miles worth\n", totalDist, champ.getGas());
+			
 			}
 			
 			
