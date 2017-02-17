@@ -192,19 +192,26 @@ public class CarRoundTheBlock {
 		Car champ = new Car(cars[winner].getPos(), cars[winner].getGas(), cars[winner].getDist());
 		Car[] raceList = cars.clone();
 		
-		System.out.println("Starting driving log");
-		System.out.printf("Begin at position %d gas %d distance %d\n",champ.getPos(), champ.getGas(), champ.getDist());
-		totalDist += champ.getDist();
-		
 		while (race){
-			for (i=start +1; i < raceList.length; i++){
-				champ.setGas( champ.getGas() - champ.getDist() );
-				System.out.printf("Go to position %d gas %d, distance %d\n", raceList[i].getPos(), raceList[i].getGas(),raceList[i].getDist());
-				System.out.printf("Getting %d miles worth of gas now have %d miles worth, starting next leg \n", raceList[i].getGas(), champ.getGas()+raceList[i].getGas());
-				champ.setDist(raceList[i].getDist());
-				totalDist += raceList[i].getDist();
-				champ.setGas(champ.getGas()+ raceList[i].getGas());
-				
+			if (raceList.length < 2 && raceList[0].getGas() >= raceList[0].getDist() ){
+				champ.setGas(raceList[0].getGas() - raceList[0].getDist());
+				System.out.printf("This car can move the whole distance with gas left for %d more miles \n",champ.getGas() );
+				race = false;
+			}
+			else{
+				System.out.println("Starting driving log");
+				System.out.printf("Begin at position %d gas %d distance %d\n",champ.getPos(), champ.getGas(), champ.getDist());
+				totalDist += champ.getDist();
+			
+				for (i=start +1; i < raceList.length; i++){
+					champ.setGas( champ.getGas() - champ.getDist() );
+					System.out.printf("Go to position %d gas %d, distance %d\n", raceList[i].getPos(), raceList[i].getGas(),raceList[i].getDist());
+					System.out.printf("Getting %d miles worth of gas now have %d miles worth, starting next leg \n", raceList[i].getGas(), champ.getGas()+raceList[i].getGas());
+					champ.setDist(raceList[i].getDist());
+					totalDist += raceList[i].getDist();
+					champ.setGas(champ.getGas()+ raceList[i].getGas());
+					}
+				System.out.printf("Finished driving, drove %d miles, gas left %d miles worth\n", totalDist, champ.getGas());
 			}
 			/*
 			for ( i=0 ; i < start; i++ ){
@@ -217,7 +224,7 @@ public class CarRoundTheBlock {
 				
 			}
 			*/
-			System.out.printf("Finished driving, drove %d miles, gas left %d miles worth\n", totalDist, champ.getGas());
+			
 			race = false;
 		}
 		
