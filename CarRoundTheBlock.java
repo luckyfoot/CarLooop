@@ -144,7 +144,7 @@ public class CarRoundTheBlock {
 	
 	public static void PrintArr(Car[] cars) {
 		int lengthCarList = cars.length;
-		System.out.printf("The number of cars on the road %d\n" ,lengthCarList  );
+		System.out.printf("Number of cars on the road: %d\n" ,lengthCarList  );
 		return;
 	}
 	
