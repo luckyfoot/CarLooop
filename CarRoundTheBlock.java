@@ -195,7 +195,7 @@ public class CarRoundTheBlock {
 		while (race){
 			if (raceList.length < 2 && raceList[0].getGas() >= raceList[0].getDist() ){
 				champ.setGas(raceList[0].getGas() - raceList[0].getDist());
-				System.out.printf("This car can move the whole distance with gas left for %d more miles \n",champ.getGas() );
+				System.out.printf("This car can move the whole distance with gas left for %d more miles.\n",champ.getGas() );
 				race = false;
 			}
 			else{
@@ -205,8 +205,8 @@ public class CarRoundTheBlock {
 			
 				for (i=start +1; i < raceList.length; i++){
 					champ.setGas( champ.getGas() - champ.getDist() );
-					System.out.printf("Go to position %d gas %d, distance %d\n", raceList[i].getPos(), raceList[i].getGas(),raceList[i].getDist());
-					System.out.printf("Getting %d miles worth of gas now have %d miles worth, starting next leg \n", raceList[i].getGas(), champ.getGas()+raceList[i].getGas());
+					System.out.printf("Go to position %d, %d miles of gas left, %d miles distance traveled\n", raceList[i].getPos(),champ.getGas(),champ.getDist());
+					System.out.printf("Getting %d miles worth of gas, now have %d miles worth, starting next leg \n", raceList[i].getGas(), champ.getGas()+raceList[i].getGas());
 					champ.setDist(raceList[i].getDist());
 					totalDist += raceList[i].getDist();
 					champ.setGas(champ.getGas()+ raceList[i].getGas());
