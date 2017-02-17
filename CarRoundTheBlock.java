@@ -213,6 +213,7 @@ public class CarRoundTheBlock {
 					}
 				System.out.printf("Finished driving, drove %d miles, gas left %d miles worth\n", totalDist, champ.getGas());
 			}
+			
 			/*
 			for ( i=0 ; i < start; i++ ){
 				champ.setGas( champ.getGas() - champ.getDist() );
