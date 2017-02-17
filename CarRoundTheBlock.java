@@ -61,8 +61,11 @@ public class CarRoundTheBlock {
 				else if (cars[j].getGas() >= cars[j].getDist()){
 					winner = j ;
 					System.out.printf("The winner is car # %d\n",winner);
-					DrivingLog(winner, cars);
+					
 				}
+			}
+			if (cars.length >1){
+				DrivingLog(winner, cars);
 			}
 		}
 		else {
@@ -211,7 +214,7 @@ public class CarRoundTheBlock {
 						totalDist += raceList[i].getDist();
 						champ.setGas(champ.getGas()+ raceList[i].getGas());
 						}
-					/*
+					
 					for (i=0; i < winner; i++){
 						champ.setGas( champ.getGas() - champ.getDist() );
 						System.out.printf("Got to position %d, %d miles gas left, %d miles distance traveled\n", raceList[i].getPos(),champ.getGas(),champ.getDist());
@@ -220,10 +223,11 @@ public class CarRoundTheBlock {
 						totalDist += raceList[i].getDist();
 						champ.setGas(champ.getGas()+ raceList[i].getGas());
 						}
-					*/
-					System.out.printf("Finished driving, drove %d miles, gas left %d miles worth\n", totalDist, champ.getGas());
+					
+					
 					race = false;
 				}
+			System.out.printf("Finished driving, drove %d miles, gas left %d miles worth\n", totalDist, champ.getGas());
 			}
 			
 			
