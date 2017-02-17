@@ -212,6 +212,7 @@ public class CarRoundTheBlock {
 					champ.setGas(champ.getGas()+ raceList[i].getGas());
 					}
 				System.out.printf("Finished driving, drove %d miles, gas left %d miles worth\n", totalDist, champ.getGas());
+				race = false;
 			}
 			
 			/*
