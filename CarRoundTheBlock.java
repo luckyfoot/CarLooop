@@ -205,7 +205,7 @@ public class CarRoundTheBlock {
 			
 				for (i=start +1; i < raceList.length; i++){
 					champ.setGas( champ.getGas() - champ.getDist() );
-					System.out.printf("Got to position %d, %d miles of gas left, %d miles distance traveled\n", raceList[i].getPos(),champ.getGas(),champ.getDist());
+					System.out.printf("Got to position %d, %d miles gas left, %d miles distance traveled\n", raceList[i].getPos(),champ.getGas(),champ.getDist());
 					System.out.printf("Getting %d miles worth of gas, now have %d miles worth, starting next leg \n", raceList[i].getGas(), champ.getGas()+raceList[i].getGas());
 					champ.setDist(raceList[i].getDist());
 					totalDist += raceList[i].getDist();
