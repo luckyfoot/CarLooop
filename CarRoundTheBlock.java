@@ -198,22 +198,22 @@ public class CarRoundTheBlock {
 				System.out.printf("This car can move the whole distance with gas left for %d more miles.\n",champ.getGas() );
 				race = false;
 			}
-			else{
-				System.out.println("Starting driving log");
-				System.out.printf("Begin at position %d gas %d distance %d\n",champ.getPos(), champ.getGas(), champ.getDist());
-				totalDist += champ.getDist();
 			
-				for (i=start +1; i < raceList.length; i++){
-					champ.setGas( champ.getGas() - champ.getDist() );
-					System.out.printf("Got to position %d, %d miles gas left, %d miles distance traveled\n", raceList[i].getPos(),champ.getGas(),champ.getDist());
-					System.out.printf("Getting %d miles worth of gas, now have %d miles worth, starting next leg \n", raceList[i].getGas(), champ.getGas()+raceList[i].getGas());
-					champ.setDist(raceList[i].getDist());
-					totalDist += raceList[i].getDist();
-					champ.setGas(champ.getGas()+ raceList[i].getGas());
-					}
-				System.out.printf("Finished driving, drove %d miles, gas left %d miles worth\n", totalDist, champ.getGas());
-				race = false;
-			}
+			System.out.println("Starting driving log");
+			System.out.printf("Begin at position %d gas %d distance %d\n",champ.getPos(), champ.getGas(), champ.getDist());
+			totalDist += champ.getDist();
+		
+			for (i=start +1; i < raceList.length; i++){
+				champ.setGas( champ.getGas() - champ.getDist() );
+				System.out.printf("Got to position %d, %d miles gas left, %d miles distance traveled\n", raceList[i].getPos(),champ.getGas(),champ.getDist());
+				System.out.printf("Getting %d miles worth of gas, now have %d miles worth, starting next leg \n", raceList[i].getGas(), champ.getGas()+raceList[i].getGas());
+				champ.setDist(raceList[i].getDist());
+				totalDist += raceList[i].getDist();
+				champ.setGas(champ.getGas()+ raceList[i].getGas());
+				}
+			System.out.printf("Finished driving, drove %d miles, gas left %d miles worth\n", totalDist, champ.getGas());
+			race = false;
+			
 			
 			/*
 			for ( i=0 ; i < start; i++ ){
