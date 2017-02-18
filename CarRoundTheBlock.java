@@ -65,10 +65,8 @@ public class CarRoundTheBlock {
 					DrivingLog(winner, cars);
 					break;
 				}
-				
 			}
-			
-			}
+		}
 		
 		else {
 			System.out.println("No cars, no winner to be found ");
@@ -210,7 +208,7 @@ public class CarRoundTheBlock {
 			
 				for (i=start +1; i < raceList.length; i++){
 					champ.setGas( champ.getGas() - champ.getDist() );
-					System.out.printf("Got to position %d, %d miles gas left, %d miles distance traveled\n", raceList[i].getPos(),champ.getGas(),champ.getDist());
+					System.out.printf("Got to position %d, %d miles gas left, %d miles distance traveled\n", raceList[i].getPos(),champ.getGas(),totalDist);
 					System.out.printf("Getting %d miles worth of gas, now have %d miles worth, starting next leg \n", raceList[i].getGas(), champ.getGas()+raceList[i].getGas());
 					champ.setDist(raceList[i].getDist());
 					totalDist += raceList[i].getDist();
@@ -218,7 +216,7 @@ public class CarRoundTheBlock {
 					
 					for (j=0; j < winner; j++){
 						champ.setGas( champ.getGas() - champ.getDist() );
-						System.out.printf("Got to position %d, %d miles gas left, %d miles distance traveled\n", raceList[j].getPos(),champ.getGas(),champ.getDist());
+						System.out.printf("Got to position %d, %d miles gas left, %d miles distance traveled\n", raceList[j].getPos(),champ.getGas(),totalDist);
 						System.out.printf("Getting %d miles worth of gas, now have %d miles worth, starting next leg \n", raceList[j].getGas(), champ.getGas()+raceList[j].getGas());
 						champ.setDist(raceList[j].getDist());
 						totalDist += raceList[j].getDist();
