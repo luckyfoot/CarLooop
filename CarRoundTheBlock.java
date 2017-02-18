@@ -220,9 +220,10 @@ public class CarRoundTheBlock {
 						System.out.printf("Getting %d miles worth of gas, now have %d miles worth, starting next leg \n", raceList[j].getGas(), champ.getGas()+raceList[j].getGas());
 						champ.setDist(raceList[j].getDist());
 						totalDist += raceList[j].getDist();
-						champ.setGas(champ.getGas()+ raceList[j].getGas());
+						champ.setGas(champ.getGas()+raceList[j].getGas());
 						}
 					}
+				champ.setGas(champ.getGas()-raceList[winner-1].getDist());
 				System.out.printf("Finished driving, drove %d miles, gas left %d miles worth\n", totalDist, champ.getGas());
 				return;
 			}
