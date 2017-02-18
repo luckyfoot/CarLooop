@@ -63,6 +63,7 @@ public class CarRoundTheBlock {
 					winner = j ;
 					System.out.printf("The winner is car # %d\n",winner);
 					DrivingLog(winner, cars);
+					break;
 				}
 				
 			}
@@ -193,7 +194,6 @@ public class CarRoundTheBlock {
 		int j = 0;
 		int start = winner;
 		int totalDist = 0;
-		boolean race = true;
 		Car champ = new Car(cars[winner].getPos(), cars[winner].getGas(), cars[winner].getDist());
 		Car[] raceList = cars.clone();
 		
